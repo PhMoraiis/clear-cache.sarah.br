@@ -12,7 +12,9 @@ Esta imagem mostra a interface da extensão Clear Cache SARAH, destacando seu de
 
 - Limpa o cache do navegador com um clique
 - Recarrega a página automaticamente após limpar o cache
+- Limpa o cache automaticamente ao acessar uma URL específica
 - Interface simples e intuitiva
+- Evita limpezas de cache repetidas na mesma aba
 
 ## Como instalar
 
@@ -27,6 +29,7 @@ Esta imagem mostra a interface da extensão Clear Cache SARAH, destacando seu de
 1. Clique no ícone da extensão na barra de ferramentas do navegador
 2. Na janela pop-up, clique no botão "Limpar Cache"
 3. O cache será limpo e a página atual será recarregada automaticamente
+4. Ao acessar a URL específica configurada, o cache será limpo automaticamente
 
 ## Desenvolvimento
 
@@ -37,6 +40,7 @@ Esta extensão foi desenvolvida utilizando:
 - JavaScript
 - API chrome.browsingData
 - API chrome.tabs
+- API chrome.runtime
 
 ## Autor
 

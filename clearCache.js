@@ -1,47 +1,35 @@
+// Aguarda o carregamento completo do DOM
 document.addEventListener("DOMContentLoaded", () => {
+  // Busca o botão de limpar cache pelo ID
   const btnClearCache = document.getElementById("btnClearCache");
 
+  // Verifica se o botão foi encontrado
   if (btnClearCache) {
+    // Adiciona um listener de clique ao botão
     btnClearCache.addEventListener("click", () => {
-      let urlClear = "https://www.youtube.com/";
-      if (chrome && chrome.browsingData) {
-        const options = {
-          cacheStorage: true,
-          cookies: true,
-          indexedDB: true,
-          localStorage: true,
-          serviceWorkers: true,
-          webSQL: true,
-        };
-        const millisecondsPerDay = 1000 * 60 * 60 * 24;
-        const oneDayAgo = Date.now() - millisecondsPerDay;
+      // Envia uma mensagem para o script de background para limpar o cache
+      chrome.runtime.sendMessage({ action: "clearCache" }, (response) => {
+        // Verifica se a limpeza do cache foi bem-sucedida
+        if (response && response.success) {
+          console.log("Cache limpo com sucesso");
 
-        chrome.browsingData.remove(
-          {
-            since: oneDayAgo,
-            origins: [urlClear],
-          },
-          options,
-          function () {
-            console.log("Cache limpo");
-          }
-        );
-
-        // Recarregar a página depois de limpar o cache
-        chrome.tabs.query(
-          { active: true, currentWindow: true },
-          function (tabs) {
+          // Busca a aba ativa na janela atual
+          chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            // Verifica se existe uma aba ativa
             if (tabs[0]) {
+              // Recarrega a aba ativa
               chrome.tabs.reload(tabs[0].id);
               console.log("Página recarregada depois de limpar o cache");
             }
-          }
-        );
-      } else {
-        console.error("API chrome.browsingData não está disponível");
-      }
+          });
+        } else {
+          // Loga erro se a limpeza do cache falhar
+          console.log("Falha ao limpar o cache");
+        }
+      });
     });
   } else {
-    console.error("O elemento com ID 'btnClearCache' não foi encontrado.");
+    // Loga erro se o botão não for encontrado
+    console.log("O elemento com ID 'btnClearCache' não foi encontrado.");
   }
 });

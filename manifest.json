@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Clear Cache SARAH",
+  "version": "1.0",
+  "description": "Limpa o cache ao entrar no PE WEB.",
+  "permissions": [
+    "browsingData",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "icon.png"
+  }
+}

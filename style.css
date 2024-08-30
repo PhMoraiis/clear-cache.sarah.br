@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "DM Sans", sans-serif;
+  --font-sans-serif: "DM Sans";
+}
+
+html, body {
+  width: 480px;
+  height: 480px;
+  font-family: "Space Mono", monospace;
+  --font-monospace: "Space Mono";
+  margin: 0;
+}
+
+.bg-background {
+  background-color: #ece3d4;
+}
+
+.text-card-foreground {
+  color: #4a3b30;
+}
+
+.text-muted-foreground {
+  color: #5c493c;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.space {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.text-2xl {
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem; /* 32px */
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.text-sm {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+}
+
+.btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: #d5b990;
+  color: #4a3b30;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Space Mono", monospace;
+}
+
+.btn:hover {
+  background-color: #c2a881;
+  transition: 0.3s ease-in-out;
+}
+
+.link {
+  text-decoration: underline;
+  color: #4a3b30;
+  font-weight: 600;
+}
+
+span {
+  color: #4a3b30;
+  font-weight: 600;
+}
+
+.margin {
+  margin-top: 1.5rem;
+}

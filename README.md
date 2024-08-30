@@ -2,6 +2,12 @@
 
 Clear Cache SARAH é uma extensão para navegador que limpa o cache ao entrar no PE WEB, evitando problemas de inicialização.
 
+## Imagem da Aplicação
+
+![Clear Cache SARAH](/app.png)
+
+Esta imagem mostra a interface da extensão Clear Cache SARAH, destacando seu design simples e intuitivo.
+
 ## Funcionalidades
 
 - Limpa o cache do navegador com um clique
